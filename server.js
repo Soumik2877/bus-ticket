@@ -380,7 +380,7 @@ app.post('/register', async (req, res) => {
     }
 
     // Assign the first available UID
-    const cardUID = availableCardUIDs.shift(); // removes it from pool
+    const cardUID = availableCardUIDs[0]; // removes it from pool
 
     // Check if already registered (safety check)
     const existing = await User.findOne({ cardUID });
